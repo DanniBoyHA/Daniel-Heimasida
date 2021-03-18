@@ -5,7 +5,8 @@ Til þess að læra að gera eitthvað, prófaðu að leita á google af því s
 
 body {
   margin: 0px;
-  font-family: Helvetica, sans-serif;
+  /*font-family: Helvetica, sans-serif;*/
+  font-family: Rockwell, regular;
 }
 
 .topBar {
@@ -33,9 +34,10 @@ body {
 }
 
 .kynning {
-  background-color: blue;
-  color: red;
-  border: 5px black;
+  color: black;
+  font-size: 70px;
+  font-style: bold;
+  -webkit-text-stroke: 1px White;
 }
 
 .rightSide {

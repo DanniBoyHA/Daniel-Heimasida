@@ -4,3 +4,12 @@ Myndir:
 
 	bkgrnd2:
 	https://www.pinterest.com/pin/281543715609429/
+
+	bkgrnd3:
+	http://www.baltana.com/art/optical-illusion-wallpaper-4032x3024-67566.html
+
+	bkgrnd4:
+	https://www.pinterest.com/pin/248331366922875576/
+
+	bkgrnd5:
+	https://www.itl.cat/view/160294/
