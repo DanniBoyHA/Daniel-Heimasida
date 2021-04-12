@@ -6,7 +6,7 @@ var munnur = 2;
 var hattur = 60;
 
 function setup() {
-  createCanvas(350,550);
+  createCanvas(750,550);
   rectMode(CENTER);
 }
 function draw() {
