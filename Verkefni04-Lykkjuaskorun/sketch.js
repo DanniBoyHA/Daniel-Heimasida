@@ -3,12 +3,14 @@ function setup() {
   createCanvas(500,500);
   background(255,215,000);
   colorMode(HSB);
-  frameRate(3);
+  frameRate(5);
 }
 
 function draw() {
-  for(var i = 400; i > 0; i = i - 20){
+  for(var x = 0; x < width; x = x+10){
     fill(random(0,360),75,100);
-    ellipse(250,250,i,i);
+    for(var y = 0; y < height; y = y+10){
+      ellipse(10+x*2,10+y*2, 15,15);
+    }
   }
 }
