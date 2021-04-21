@@ -14,7 +14,8 @@ function draw() {
       fill(random(50,150),random(50,150),50);
       rect(x,y, 10,10);
       fill(random(0,50),random(0,50),0);
-      i= alphabet[Math.floor(Math.random() * alphabet.length)];
+      i = random(1,9);
+      //i= alphabet[Math.floor(Math.random() * alphabet.length)];
       text("" + i,x,y+10);
     }
   }
