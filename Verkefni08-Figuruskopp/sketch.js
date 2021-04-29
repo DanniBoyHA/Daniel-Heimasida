@@ -1,8 +1,8 @@
 var faceScale = 1.0;
 var faceX = 100;
 var faceY = 100;
-var hradiX = 4;
-var hradiY = 4;
+var hradiX = 3;
+var hradiY = 3;
 
 var bakLitur = 150;
 var augnLitur = 0;
@@ -57,7 +57,7 @@ function amma(ammaX,ammaY,ammaScale,ammaAugnLitur) {
   fill(200,0,0);
   ellipse(ammaX - 10 * ammaScale, ammaY + 60 * ammaScale, 40 * ammaScale, 12 * ammaScale);
   ellipse(ammaX + 10 * ammaScale, ammaY + 60 * ammaScale, 40 * ammaScale, 12 * ammaScale);
-  //ellipse(ammaX, ammaY + 45 * ammaScale, 40 * ammaScale, 10 * ammaScale);
+  //ellipse(ammaX, ammaY + 55 * ammaScale, 20 * ammaScale, 5 * ammaScale);
 
   //teiknum augu
   fill(230);

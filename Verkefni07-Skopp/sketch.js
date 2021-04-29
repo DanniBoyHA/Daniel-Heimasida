@@ -29,7 +29,7 @@ function setup() {
 }
 
 function draw() {
-  background(255,200,0);
+  background(0, 255, 0);
 	// Reikna ný hnit út frá hraða boltans:
   boltiX = boltiX + hradiX;
   boltiY = boltiY + hradiY;
@@ -66,15 +66,15 @@ function draw() {
   }
 
 	// Teikna boltann
-  fill(236,36,94);
-  rect(boltiX, boltiY, boltiStaerd, boltiStaerd);
+  fill(255,0,255);
+  ellipse(boltiX, boltiY, boltiStaerd, boltiStaerd);
 	// Teikna spaðann
-  fill(3,123,227);
+  fill(0, 0, 255);
   rect(spadiX,spadiY ,spadiBreidd,spadiThykkt);
   fill(0);
   ellipse(spadiX, spadiY, 10,10);
   	// Teikna spaða 2
-  fill(245, 93, 66);
+  fill(255, 0, 0);
   rect(spadiX2,spadiY2 ,spadiBreidd2,spadiThykkt2);
   fill (0);
   ellipse(spadiX2, spadiY2, 10,10);
@@ -90,8 +90,8 @@ function draw() {
     fill(0,0,0,100);
     rect(width/2,height/2,width,height);
     fill(0);
-    text("A og D stýrir rauða spaðanum", width/2, height/2 - 40);
-    text("← og → stýrir bláa spaðanum", width/2, height/2 - 20);
+    text("A og D stýra rauða spaðanum", width/2, height/2 - 40);
+    text("← og → stýra bláa spaðanum", width/2, height/2 - 20);
     text("Ýttu á SPACE til að hefja leik!", width/2, height/2);
   }
     // Teikna tapskjá
