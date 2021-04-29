@@ -3,9 +3,10 @@ var boltiY = 100;
 var hradiX = 0;
 var hradiY = 0;
 var boltiStaerd = 20;
+
 var stig = 0;
 var spadiBreidd = 150;
-var spadiThykkt = 25;
+var spadiThykkt = 10;
 var spadiY;
 var spadiX = 200;
 
@@ -30,6 +31,8 @@ function setup() {
 
 function draw() {
   background(0, 255, 0);
+  fill(255);
+  rect(width/2,height/2,width+6,6);
 	// Reikna ný hnit út frá hraða boltans:
   boltiX = boltiX + hradiX;
   boltiY = boltiY + hradiY;
@@ -54,15 +57,21 @@ function draw() {
   }
 
     // Athuga hvort boltinn snertir spaðann
-  if ((boltiX > spadiX - (spadiBreidd/2) && boltiX < spadiX + (spadiBreidd/2)) && (boltiY + (boltiStaerd/2) > spadiY - (spadiThykkt/2) && boltiY + (boltiStaerd/2) < spadiY + (spadiThykkt/2))) {
-    hradiY = hradiY * -1;
-    stig2++;
-  }
-
-      // Athuga hvort boltinn snertir spaða 2
-  if ((boltiX > spadiX2 - (spadiBreidd2/2) && boltiX < spadiX2 + (spadiBreidd2/2)) && (boltiY + (boltiStaerd/2) > spadiY2 - (spadiThykkt2/2) && boltiY - (boltiStaerd/2) < spadiY2 + (spadiThykkt2/2))) {
+  if(abs(spadiY - boltiY) < boltiStaerd/2 + spadiThykkt/2 && abs(spadiX - boltiX) < boltiStaerd/2 + spadiBreidd/2){
     hradiY = hradiY * -1;
     stig++;
+  }
+
+
+
+      // Athuga hvort boltinn snertir spaða 2 ... kóði frá mér
+  if ((boltiX > spadiX2 - (spadiBreidd2/2) && boltiX < spadiX2 + (spadiBreidd2/2)) && (boltiY + (boltiStaerd/2) > spadiY2 - (spadiThykkt2/2) && boltiY - (boltiStaerd/2) < spadiY2 + (spadiThykkt2/2))) {
+    if(abs(boltiY-spadiY2)<abs(hradiY-spadiThykkt2/2)){
+      hradiX = hradiX * -1;
+    } else {
+      hradiY = hradiY * -1;
+      stig2++;
+    }
   }
 
 	// Teikna boltann
@@ -70,7 +79,8 @@ function draw() {
   ellipse(boltiX, boltiY, boltiStaerd, boltiStaerd);
 	// Teikna spaðann
   fill(0, 0, 255);
-  rect(spadiX,spadiY ,spadiBreidd,spadiThykkt);
+  triangle(spadiX+spadiBreidd/2,spadiY-spadiThykkt/2, spadiX,spadiY+spadiThykkt/2+5, spadiX-spadiBreidd/2,spadiY-spadiThykkt/2);
+  //rect(spadiX,spadiY ,spadiBreidd,spadiThykkt);
   fill(0);
   ellipse(spadiX, spadiY, 10,10);
   	// Teikna spaða 2
@@ -80,10 +90,10 @@ function draw() {
   ellipse(spadiX2, spadiY2, 10,10);
 	// Teikna stigin
   fill(0);
-  text("Stig: " + stig,50,20);
+  text("Stig: " + stig2,50,20);
     // Teikna stigin
   fill(0);
-  text("Stig: " + stig2,50,height-20);
+  text("Stig: " + stig,50,height-20);
 
     // Teikna upphafsskjá
   if(gameStart == false){
@@ -105,9 +115,9 @@ function draw() {
   // Færa bolta aftur á leiksvæði
   if(gameEnd == true){
     if(boltiY>height){
-      stig = stig + 3;
-    } else if(boltiY<-20){
       stig2 = stig2 + 3;
+    } else if(boltiY<-20){
+      stig = stig + 3;
     }
     boltiX = 100;
     boltiY = 200;
